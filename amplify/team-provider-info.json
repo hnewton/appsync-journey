@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "appsync-journey-dev-20190927150643-authRole",
+            "UnauthRoleArn": "arn:aws:iam::588984212492:role/appsync-journey-dev-20190927150643-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::588984212492:role/appsync-journey-dev-20190927150643-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "appsync-journey-dev-20190927150643-deployment",
+            "UnauthRoleName": "appsync-journey-dev-20190927150643-unauthRole",
+            "StackName": "appsync-journey-dev-20190927150643",
+            "StackId": "arn:aws:cloudformation:us-west-2:588984212492:stack/appsync-journey-dev-20190927150643/181b9420-e173-11e9-a084-0678f540705a"
+        },
+        "categories": {
+            "auth": {
+                "appsyncjourneyc707bda4": {}
+            }
+        }
+    }
+}

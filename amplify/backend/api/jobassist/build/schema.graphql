@@ -1,0 +1,158 @@
+type Listing {
+  id: ID!
+  title: String!
+  company: String!
+  url: String!
+  status: Status!
+  favorite: Boolean!
+  notes: String
+  relatedDate: String
+  contactName: String
+  contactEmail: String
+  contactPhoneNumber: String
+  createdAt: String
+  updatedAt: String
+}
+
+enum Status {
+  APPLIED
+  TRACKING
+  INTERVIEWING
+  TAKE_HOME_ASSIGNMENT
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelListingConnection {
+  items: [Listing]
+  nextToken: String
+}
+
+input ModelStringFilterInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+}
+
+input ModelIDFilterInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+}
+
+input ModelIntFilterInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  contains: Int
+  notContains: Int
+  between: [Int]
+}
+
+input ModelFloatFilterInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  contains: Float
+  notContains: Float
+  between: [Float]
+}
+
+input ModelBooleanFilterInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelStatusFilterInput {
+  eq: Status
+  ne: Status
+}
+
+input ModelListingFilterInput {
+  id: ModelIDFilterInput
+  title: ModelStringFilterInput
+  company: ModelStringFilterInput
+  url: ModelStringFilterInput
+  status: ModelStatusFilterInput
+  favorite: ModelBooleanFilterInput
+  notes: ModelStringFilterInput
+  relatedDate: ModelStringFilterInput
+  contactName: ModelStringFilterInput
+  contactEmail: ModelStringFilterInput
+  contactPhoneNumber: ModelStringFilterInput
+  createdAt: ModelStringFilterInput
+  updatedAt: ModelStringFilterInput
+  and: [ModelListingFilterInput]
+  or: [ModelListingFilterInput]
+  not: ModelListingFilterInput
+}
+
+type Query {
+  getListing(id: ID!): Listing
+  listListings(filter: ModelListingFilterInput, limit: Int, nextToken: String): ModelListingConnection
+}
+
+input CreateListingInput {
+  id: ID
+  title: String!
+  company: String!
+  url: String!
+  status: Status!
+  favorite: Boolean!
+  notes: String
+  relatedDate: String
+  contactName: String
+  contactEmail: String
+  contactPhoneNumber: String
+  createdAt: String
+  updatedAt: String
+}
+
+input UpdateListingInput {
+  id: ID!
+  title: String
+  company: String
+  url: String
+  status: Status
+  favorite: Boolean
+  notes: String
+  relatedDate: String
+  contactName: String
+  contactEmail: String
+  contactPhoneNumber: String
+  createdAt: String
+  updatedAt: String
+}
+
+input DeleteListingInput {
+  id: ID
+}
+
+type Mutation {
+  createListing(input: CreateListingInput!): Listing
+  updateListing(input: UpdateListingInput!): Listing
+  deleteListing(input: DeleteListingInput!): Listing
+}

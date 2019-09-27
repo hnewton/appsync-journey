@@ -1,4 +1,5 @@
 {
+    "CreateAPIKey": 0,
     "AppSyncApiName": "jobassist",
     "DynamoDBBillingMode": "PAY_PER_REQUEST",
     "DynamoDBEnableServerSideEncryption": "false",
@@ -7,5 +8,7 @@
             "authappsyncjourneyc707bda4",
             "Outputs.UserPoolId"
         ]
-    }
+    },
+    "S3DeploymentBucket": "appsync-journey-dev-20190927150643-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/0ae7f96e836cc5966311537440dc15a7e4b53be7"
 }
