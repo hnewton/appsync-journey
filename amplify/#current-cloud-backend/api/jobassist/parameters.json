@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "jobassist",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authappsyncjourneyc707bda4",
+            "Outputs.UserPoolId"
+        ]
+    }
+}

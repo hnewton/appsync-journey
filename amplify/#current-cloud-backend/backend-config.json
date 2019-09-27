@@ -1,0 +1,26 @@
+{
+	"auth": {
+		"appsyncjourneyc707bda4": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	},
+	"api": {
+		"jobassist": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authappsyncjourneyc707bda4"
+						}
+					}
+				}
+			}
+		}
+	}
+}
